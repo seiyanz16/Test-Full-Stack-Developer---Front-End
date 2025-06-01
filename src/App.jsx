@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import { isAuthenticated } from "./lib/auth";
 import Users from "./pages/users/UsersPage";
 import AuthLayout from "./pages/Layout";
+import Transactions from "./pages/transaction/TransactionsPage";
 
 const ProtectedRoute = ({ redirectPath = "/login", children }) => {
   if (!isAuthenticated()) {
@@ -36,8 +37,7 @@ function App() {
         <Route element={<AuthLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
-          {/* <Route path="/transactions" element={<Transactions />} /> */}
-          {/* Tambahkan rute lain yang memerlukan autentikasi di sini */}
+          <Route path="/transactions" element={<Transactions />} />
         </Route>
 
         {/* Route default: redirect ke /login */}

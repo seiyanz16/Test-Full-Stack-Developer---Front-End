@@ -47,7 +47,7 @@ const FormDialog = ({
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>
@@ -72,6 +72,7 @@ const FormDialog = ({
                 placeholder={field.placeholder}
                 value={formData[field.id] || ""}
                 onChange={onFormChange}
+                readOnly={field.readOnly}
                 className={
                   errors[field.id] ? "col-span-3 border-red-500" : "col-span-3"
                 }
